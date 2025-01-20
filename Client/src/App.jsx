@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("https://accountcheckapi.onrender.com/listbanks")
+      .get("http://localhost:9000/listbanks")
       .then((response) => setData(response.data))
       .catch((error) => console.error("Error fetching data", error));
   }, []);
@@ -25,7 +25,7 @@ const App = () => {
     };
     try {
       const response = await axios.post(
-        "https://accountcheckapi.onrender.com/getname",
+        "http://localhost:9000/getname",
         payload
       );
       console.log(response.data);
